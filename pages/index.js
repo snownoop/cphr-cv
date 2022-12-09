@@ -11,23 +11,11 @@ import {
 } from "react-icons/fa";
 import styles from "../styles/Home.module.css";
 
-const toggleTheme = (isManual) => {
-  if (isManual) {
-    let currentTheme = localStorage.theme;
-    if (!currentTheme)
-      currentTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-    localStorage.theme = currentTheme === "dark" ? "light" : "dark";
-  }
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
+const toggleTheme = (theme) => {
+  if (theme === "dark") {
+    document.body.classList.add("dark");
   } else {
-    document.documentElement.classList.remove("dark");
+    document.body.classList.remove("dark");
   }
 };
 
@@ -160,16 +148,16 @@ const PROJECTS = [
 ];
 
 export default function Home() {
-  const [theme, setTheme] = useState();
+  const [theme, setTheme] = useState("dark");
 
   const onThemeSwitchClick = () => {
-    toggleTheme(true);
-    setTheme(localStorage.theme);
+    const newTheme = theme === "dark" ? "light" : "dark";
+    toggleTheme(newTheme);
+    setTheme(newTheme);
   };
 
   useEffect(() => {
-    toggleTheme();
-    setTheme(localStorage.theme);
+    toggleTheme(theme);
   }, []);
 
   return (
