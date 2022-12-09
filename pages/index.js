@@ -170,7 +170,7 @@ export default function Home() {
 
       <main className={`${styles.main} flex w-full flex-grow flex-col`}>
         <div className="mx-auto flex w-full flex-row items-center justify-between px-4 pt-2 pb-4 lg:w-4/6 lg:px-0">
-          <div className="flex flex-row items-start justify-start">
+          <div className="items-centerjustify-start flex flex-row">
             <div className="ml-2 h-14 w-14">
               <Image
                 alt="profile"
@@ -181,8 +181,8 @@ export default function Home() {
               />
             </div>
             <div className="ml-4 flex flex-col items-start justify-start">
-              <div className="text-xl">Oleksandr Karliuchenko</div>
-              <div className="place-self-end text-orange-500">
+              <div className="text-lg sm:text-xl">Oleksandr Karliuchenko</div>
+              <div className="text-orange-500 sm:place-self-end">
                 Software Engineer
               </div>
             </div>
@@ -190,12 +190,12 @@ export default function Home() {
           <div>
             {theme === "dark" ? (
               <FaSun
-                className="h-8 w-8 cursor-pointer transition duration-150 hover:text-orange-500"
+                className="h-6 w-6 cursor-pointer transition duration-150 hover:text-orange-500 sm:h-8 sm:w-8"
                 onClick={onThemeSwitchClick}
               />
             ) : (
               <FaMoon
-                className="h-8 w-8 cursor-pointer transition duration-150 hover:text-orange-500"
+                className="h-6 w-6 cursor-pointer transition duration-150 hover:text-orange-500 sm:h-8 sm:w-8"
                 onClick={onThemeSwitchClick}
               />
             )}
@@ -267,12 +267,12 @@ export default function Home() {
         </div>
         <div className="mx-auto flex w-full flex-col items-start justify-start py-4 px-4 lg:w-4/6 lg:px-0">
           <div className="text-xl">Personal Projects</div>
-          <div className="flex w-full flex-row flex-wrap items-start justify-between pt-2">
+          <div className="flex w-full flex-col flex-wrap items-start justify-start pt-2 sm:flex-row sm:justify-between">
             {PROJECTS.map((item, index) => (
-              <div className="mt-2 w-1/2 lg:w-1/2" key={index}>
+              <div className="mt-4 w-full sm:mt-2 sm:w-1/2" key={index}>
                 <div className="text-lg">
                   {item.title}
-                  <span className="ml-2 text-xs italic text-orange-500">
+                  <span className="block text-xs italic text-orange-500 sm:ml-2 sm:inline">
                     {item.status}
                   </span>
                 </div>
