@@ -305,7 +305,7 @@ export default function Home() {
               >
                 Odessa National Polytechnic University
               </a>
-              <div className="mt-2 text-sm">Bachelor's diploma</div>
+              <div className="mt-2 text-sm">Bachelor&apos;s diploma</div>
               <div className="text-sm">2008 - 2013</div>
             </div>
           </div>
