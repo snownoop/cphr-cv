@@ -53,6 +53,7 @@ const SKILLS = [
       "Next js",
       "Node js",
       "React-query",
+      "Styled-Components",
       "MySQL",
       "Firebase",
       "Google functions / AWS Lambda",
