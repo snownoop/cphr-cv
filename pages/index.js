@@ -207,7 +207,7 @@ export default function Home() {
           <div className="mx-auto flex w-full flex-col items-start justify-start px-4 lg:w-4/6 lg:px-0">
             <div className="mb-2 text-xl">About me</div>
             <div>
-              Hi, my name is Oleksandr, i am sofrware engineer from Odessa,
+              Hi, my name is Oleksandr, i am software engineer from Odessa,
               Ukraine (currently in USA). I am inspired by technologies and have
               a passion for developing user-friendly and reliable systems. I am
               providing value and expediting the efficiency and effectiveness of
