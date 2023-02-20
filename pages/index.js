@@ -9,6 +9,7 @@ import {
   FaSun,
   FaMoon,
 } from "react-icons/fa";
+import ReactCountryFlag from "react-country-flag";
 import styles from "../styles/Home.module.css";
 
 const toggleTheme = (theme) => {
@@ -172,13 +173,24 @@ export default function Home() {
       <main className={`${styles.main} flex w-full flex-grow flex-col`}>
         <div className="mx-auto flex w-full flex-row items-center justify-between px-4 pt-2 pb-4 lg:w-4/6 lg:px-0">
           <div className="items-centerjustify-start flex flex-row">
-            <div className="ml-2 h-14 w-14">
+            <div className="relative ml-2 h-14 w-14 ">
               <Image
                 alt="profile"
                 className="rounded-full"
                 height={280}
                 width={280}
                 src="/ava.jpeg"
+              />
+              <ReactCountryFlag
+                className="emojiFlag absolute"
+                countryCode="UA"
+                style={{
+                  fontSize: "1.5rem",
+                  lineHeight: "1.5rem",
+                  right: "-25%",
+                  top: 0,
+                }}
+                aria-label="Ukraine"
               />
             </div>
             <div className="ml-4 flex flex-col items-start justify-start">
@@ -207,12 +219,13 @@ export default function Home() {
           <div className="mx-auto flex w-full flex-col items-start justify-start px-4 lg:w-4/6 lg:px-0">
             <div className="mb-2 text-xl">About me</div>
             <div>
-              Hi, my name is Oleksandr, i am software engineer from Odessa,
-              Ukraine (currently in USA). I am inspired by technologies and have
-              a passion for developing user-friendly and reliable systems. I am
-              providing value and expediting the efficiency and effectiveness of
+              Hi, my name is Oleksandr, i am software engineer from New York,
+              USA. I am inspired by technologies and have a passion for
+              developing user-friendly and reliable systems. I am providing
+              value and expediting the efficiency and effectiveness of
               organizational success as a well-versed in technology frontend
-              developer. Interested in innovations, blockchain, web3.
+              developer. Interested in innovations, frontend, blockchain and
+              web3.
             </div>
           </div>
         </div>
