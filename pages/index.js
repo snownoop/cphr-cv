@@ -56,6 +56,7 @@ const SKILLS = [
       "Apollo/GraphQL",
       "React-query",
       "Styled-Components",
+      "Vite",
       "MySQL",
       "Firebase",
       "Google functions / AWS Lambda",
