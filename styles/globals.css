@@ -71,7 +71,20 @@ a {
   --n: 310;
   color: #0000;
   background: linear-gradient(-90deg, rgb(249 115 22) 5px, #0000 0) 10px 0,
+    linear-gradient(rgb(39 39 42) 0 0) 0 0;
+  background-size: calc(var(--n) * 1ch) 200%;
+  -webkit-background-clip: padding-box, text;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+  animation: b 0.7s infinite steps(1),
+    t calc(var(--n) * 0.07s) steps(var(--n)) forwards;
+}
+
+.dark .typewriter {
+  color: #0000;
+  background: linear-gradient(-90deg, rgb(249 115 22) 5px, #0000 0) 10px 0,
     linear-gradient(rgb(244 244 245) 0 0) 0 0;
+  --n: 310;
   background-size: calc(var(--n) * 1ch) 200%;
   -webkit-background-clip: padding-box, text;
   background-clip: padding-box, text;
