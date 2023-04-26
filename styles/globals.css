@@ -18,6 +18,79 @@ a {
   box-sizing: border-box;
 }
 
+.transitionBlockSkillsTitle {
+  transition-delay: 0ms;
+}
+.transitionBlockSkills:nth-child(1) {
+  transition-delay: 0ms;
+}
+.transitionBlockSkills:nth-child(2) {
+  transition-delay: 500ms;
+}
+.transitionBlockSkills:nth-child(3) {
+  transition-delay: 1000ms;
+}
+
+.transitionBlockExpTitle {
+  transition-delay: 1500ms;
+}
+.transitionBlockExp:nth-child(1) {
+  transition-delay: 1500ms;
+}
+.transitionBlockExp:nth-child(2) {
+  transition-delay: 2000ms;
+}
+.transitionBlockExp:nth-child(3) {
+  transition-delay: 2500ms;
+}
+.transitionBlockExp:nth-child(4) {
+  transition-delay: 3000ms;
+}
+
+.transitionBlockProjectTitle {
+  transition-delay: 3500ms;
+}
+.transitionBlockProject:nth-child(1) {
+  transition-delay: 3500ms;
+}
+.transitionBlockProject:nth-child(2) {
+  transition-delay: 4000ms;
+}
+
+.transitionBlockEduTitle {
+  transition-delay: 4500ms;
+}
+.transitionBlockEdu:nth-child(1) {
+  transition-delay: 4500ms;
+}
+.transitionBlockEdu:nth-child(2) {
+  transition-delay: 5000ms;
+}
+
+.typewriter {
+  --n: 310;
+  color: #0000;
+  background: linear-gradient(-90deg, rgb(249 115 22) 5px, #0000 0) 10px 0,
+    linear-gradient(rgb(244 244 245) 0 0) 0 0;
+  background-size: calc(var(--n) * 1ch) 200%;
+  -webkit-background-clip: padding-box, text;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+  animation: b 0.7s infinite steps(1),
+    t calc(var(--n) * 0.07s) steps(var(--n)) forwards;
+}
+
+@keyframes t {
+  from {
+    background-size: 0 200%;
+  }
+}
+@keyframes b {
+  50% {
+    background-position: 0 -100%, 0 0;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

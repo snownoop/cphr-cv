@@ -152,6 +152,7 @@ const PROJECTS = [
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
+  const [showContent, setShowContent] = useState(false);
 
   const onThemeSwitchClick = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -161,7 +162,13 @@ export default function Home() {
 
   useEffect(() => {
     toggleTheme(theme);
+    setTimeout(() => {
+      setShowContent(true);
+    }, 500);
   }, []);
+
+  let opacityClassName = "opacity-0";
+  if (showContent) opacityClassName = "opacity-100";
 
   return (
     <div className="bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-100">
@@ -183,7 +190,7 @@ export default function Home() {
                 src="/ava.jpeg"
               />
               <ReactCountryFlag
-                className="emojiFlag absolute"
+                className="emojiFlag absolute animate-bounce"
                 countryCode="UA"
                 style={{
                   fontSize: "1.5rem",
@@ -217,26 +224,28 @@ export default function Home() {
         </div>
 
         <div className="w-full bg-zinc-200 py-4 dark:bg-zinc-700">
-          <div className="mx-auto flex w-full flex-col items-start justify-start px-4 lg:w-4/6 lg:px-0">
+          <div className="mx-auto w-full px-4 lg:w-4/6 lg:px-0">
             <div className="mb-2 text-xl">About me</div>
-            <div>
-              Hi, my name is Oleksandr, i am software engineer from New York,
-              USA. I am inspired by technologies and have a passion for
-              developing user-friendly and reliable systems. I am providing
-              value and expediting the efficiency and effectiveness of
-              organizational success as a well-versed in technology frontend
-              developer. Interested in innovations, frontend, blockchain and
-              web3.
-            </div>
+            <span className="typewriter">
+              Hi, my name is Oleksandr, I am software engineer from New York,
+              USA. I am inspired by technologies and have a passion for value
+              and expediting the efficiency and effectiveness of organizational
+              success as a well-versed in technology frontend developer.
+              Interested in innovations, frontend, blockchain and web3.
+            </span>
           </div>
         </div>
         <div className="mx-auto flex w-full flex-col items-start justify-start py-4 px-4 lg:w-4/6 lg:px-0">
-          <div className="text-xl">Skills</div>
+          <div
+            className={`transitionBlockSkillsTitle text-xl ${opacityClassName} transition-opacity duration-500`}
+          >
+            Skills
+          </div>
           <div className="flex w-full flex-col items-start justify-start pt-2 lg:flex-row lg:justify-between">
             {SKILLS.map((item) => (
               <div
                 key={item.title}
-                className="flex w-full flex-col items-start justify-start py-1 lg:w-1/3"
+                className={`transitionBlockSkills ${opacityClassName} flex w-full flex-col items-start justify-start py-1 transition-opacity duration-500 lg:w-1/3`}
               >
                 <div className="mb-2 text-lg">{item.title}</div>
                 <div className="flex flex-row flex-wrap items-center justify-start	">
@@ -255,10 +264,17 @@ export default function Home() {
         </div>
         <div className="w-full bg-zinc-200 py-4 dark:bg-zinc-700">
           <div className="mx-auto flex w-full flex-col items-start justify-start px-4 lg:w-4/6 lg:px-0">
-            <div className="text-xl">Professional experience</div>
-            <div className="flex w-full flex-row flex-wrap items-start justify-between pt-2">
+            <div
+              className={`transitionBlockExpTitle text-xl ${opacityClassName} transition-opacity duration-500`}
+            >
+              Professional experience
+            </div>
+            <div className="flex w-full flex-row flex-wrap items-start justify-start pt-2">
               {EXPERIENCE.map((item, index) => (
-                <div className="mt-2 w-1/2 lg:w-1/4" key={index}>
+                <div
+                  className={`transitionBlockExp mt-2 w-1/2 p-2 ${opacityClassName} transition-opacity duration-500 lg:w-1/4`}
+                  key={index}
+                >
                   <a
                     href={item.link}
                     target="_blank"
@@ -281,10 +297,17 @@ export default function Home() {
           </div>
         </div>
         <div className="mx-auto flex w-full flex-col items-start justify-start py-4 px-4 lg:w-4/6 lg:px-0">
-          <div className="text-xl">Personal Projects</div>
-          <div className="flex w-full flex-col flex-wrap items-start justify-start pt-2 sm:flex-row sm:justify-between">
+          <div
+            className={`transitionBlockProjectTitle text-xl transition-opacity duration-500 ${opacityClassName}`}
+          >
+            Personal Projects
+          </div>
+          <div className="flex w-full flex-row flex-wrap items-start justify-start pt-2">
             {PROJECTS.map((item, index) => (
-              <div className="mt-4 w-full sm:mt-2 sm:w-1/2" key={index}>
+              <div
+                className={`transitionBlockProject ${opacityClassName} mt-2 w-1/2 p-2 transition-opacity duration-500 lg:w-1/3`}
+                key={index}
+              >
                 <div className="text-lg">
                   {item.title}
                   <span className="block text-xs italic text-orange-500 sm:ml-2 sm:inline">
@@ -298,18 +321,42 @@ export default function Home() {
         </div>
         <div className="w-full bg-zinc-200 py-4 dark:bg-zinc-700">
           <div className="mx-auto flex w-full flex-col items-start justify-start px-4 lg:w-4/6 lg:px-0">
-            <div className="text-xl">Education</div>
-            <div className="mt-2 w-full">
-              <a
-                href="https://en.wikipedia.org/wiki/Odesa_National_Polytechnic_University"
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg underline"
+            <div
+              className={`transitionBlockEduTitle text-xl ${opacityClassName} transition-opacity duration-500`}
+            >
+              Education
+            </div>
+            <div className="flex w-full flex-row flex-wrap items-start justify-start pt-2">
+              <div
+                className={`transitionBlockEdu mt-2 w-1/2 p-2 lg:w-1/3 ${opacityClassName} transition-opacity duration-500`}
               >
-                Odessa National Polytechnic University
-              </a>
-              <div className="mt-2 text-sm">Bachelor&apos;s diploma</div>
-              <div className="text-sm">2008 - 2013</div>
+                <a
+                  href="https://en.wikipedia.org/wiki/Odesa_National_Polytechnic_University"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-lg underline"
+                >
+                  Odessa National Polytechnic University
+                </a>
+                <div className="mt-2 text-sm">
+                  Computer science - Bachelor&apos;s diploma
+                </div>
+                <div className="text-sm">2008 - 2013</div>
+              </div>
+              <div
+                className={`transitionBlockEdu mt-2 w-1/2 p-2 lg:w-1/4 ${opacityClassName} transition-opacity duration-500`}
+              >
+                <a
+                  href="https://chaincode.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-lg underline"
+                >
+                  Chaincode Labs
+                </a>
+                <div className="mt-2 text-sm">Bitcoin Developer Seminars</div>
+                <div className="text-sm">2023</div>
+              </div>
             </div>
           </div>
         </div>
