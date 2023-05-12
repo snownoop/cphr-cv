@@ -137,15 +137,15 @@ const EXPERIENCE = [
 
 const PROJECTS = [
   {
+    title: "Tech-crypto Blog Website",
+    link: "https://cphr-blog.vercel.app",
+    description:
+      "Typescript, Next-js, Apollo, Prisma, Tailwindcss based personal blog with tech subjects, admin panel and ability to manage posts",
+  },
+  {
     title: "Restaurs",
     description:
       "Big react-native/firebase application for ios and android for managing restaurant, track guests activity and simplify communication between waiters,managers and guests",
-    status: "In-development",
-  },
-  {
-    title: "Tech-crypto Blog Website",
-    description:
-      "Next-js/prisma based personal blog with tech subjects, admin panel and ability to manage posts",
     status: "In-development",
   },
 ];
@@ -309,7 +309,18 @@ export default function Home() {
                 key={index}
               >
                 <div className="text-lg">
-                  {item.title}
+                  {item.link ? (
+                    <a
+                      className="text-lg underline"
+                      target="_blank"
+                      rel="noreferrer"
+                      href={item.link}
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    item.title
+                  )}
                   <span className="block text-xs italic text-orange-500 sm:ml-2 sm:inline">
                     {item.status}
                   </span>
