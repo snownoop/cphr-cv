@@ -66,6 +66,9 @@ a {
 .transitionBlockEdu:nth-child(2) {
   transition-delay: 5000ms;
 }
+.transitionBlockEdu:nth-child(3) {
+  transition-delay: 5500ms;
+}
 
 .typewriter {
   --n: 310;

@@ -368,6 +368,23 @@ export default function Home() {
                 <div className="mt-2 text-sm">Bitcoin Developer Seminars</div>
                 <div className="text-sm">2023</div>
               </div>
+              <div
+                className={`transitionBlockEdu mt-2 w-1/2 p-2 lg:w-1/4 ${opacityClassName} transition-opacity duration-500`}
+              >
+                <a
+                  href="https://www.udemy.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-lg underline"
+                >
+                  Udemy courses
+                </a>
+                <div className="mt-2 text-sm">GraphQL By Example</div>
+                <div className="mt-2 text-sm">Understanding Typescript</div>
+                <div className="mt-2 text-sm">
+                  Next.js & React - The Complete Guide
+                </div>
+              </div>
             </div>
           </div>
         </div>
