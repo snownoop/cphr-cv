@@ -384,6 +384,9 @@ export default function Home() {
                 <div className="mt-2 text-sm">
                   Next.js & React - The Complete Guide
                 </div>
+                <div className="mt-2 text-sm">
+                  Blockchain and Bitcoin Fundamentals
+                </div>
               </div>
             </div>
           </div>
